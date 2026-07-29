@@ -1,5 +1,7 @@
 # Botium Toys: IT Security Audit & Compliance Assessment
 
+> [!NOTE] ACTIVITY MADE IN JULY 2026
+
 ## 📌 Project Overview
 This project presents an internal IT security audit and risk assessment conducted for **Botium Toys**, an expanding e-commerce and retail toy company. 
 
