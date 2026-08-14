@@ -1,0 +1,1 @@
+Repositorio con las actividades, apuntes y proyectos prácticos que voy desarrollando durante la Certificación Profesional de Ciberseguridad de Google, impartida en Coursera. Lo uso como evidencia de trabajo práctico para postular a puestos de analista de ciberseguridad trainee/junior.
