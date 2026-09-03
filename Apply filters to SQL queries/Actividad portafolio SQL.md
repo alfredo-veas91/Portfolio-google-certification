@@ -10,7 +10,7 @@ Usted es un profesional de seguridad en una gran organización. Parte de su trab
 
   
 
-Su tarea es examinar los datos de la organización en sus tablas **employees** y **log\_in\_attempts**. Deberá utilizar filtros SQL para recuperar registros de diferentes conjuntos de datos e investigar los posibles problemas de seguridad.
+Su tarea es examinar los datos de la organización en sus tablas **employees** y **log_in_attempts**. Deberá utilizar filtros SQL para recuperar registros de diferentes conjuntos de datos e investigar los posibles problemas de seguridad.
 
   
 
@@ -19,16 +19,16 @@ Su tarea es examinar los datos de la organización en sus tablas **employees** y
   
 
 ```
-SELECT \*  
+SELECT *  
 
-FROM log\_in\_attempts  
+FROM log_in_attempts  
 
-WHERE login\_time \> ‘18:00’ AND success \= 0;
+WHERE login_time > ‘18:00’ AND success = 0;
 
 ```
   
 
-Esta consulta recupera los registros de la tabla log\_in\_attempts correspondientes a intentos de inicio de sesión fallidos (success \= 0) realizados después del horario laboral (login\_time \> '18:00').
+Esta consulta recupera los registros de la tabla log_in_attempts correspondientes a intentos de inicio de sesión fallidos (success = 0) realizados después del horario laboral (login_time > '18:00').
 
   
 
@@ -37,16 +37,16 @@ Esta consulta recupera los registros de la tabla log\_in\_attempts correspondien
   
 
 ```
-SELECT \*  
+SELECT *  
 
-FROM log\_in\_attempts  
+FROM log_in_attempts  
 
-WHERE login\_date \= ‘2022-05-09’ OR login\_date \= ‘2022-05-08’;
+WHERE login_date = ‘2022-05-09’ OR login_date = ‘2022-05-08’;
 ```
 
   
 
-Esta consulta filtra la tabla log\_in\_attempts para obtener todos los intentos de inicio de sesión registrados en las fechas específicas del 8 y 9 de mayo de 2022 (login\_date \= '2022-05-09' OR login\_date \= '2022-05-08').
+Esta consulta filtra la tabla log_in_attempts para obtener todos los intentos de inicio de sesión registrados en las fechas específicas del 8 y 9 de mayo de 2022 (login_date = '2022-05-09' OR login_date = '2022-05-08').
 
   
 
@@ -55,16 +55,16 @@ Esta consulta filtra la tabla log\_in\_attempts para obtener todos los intentos 
   
 
 ```
-SELECT \*  
+SELECT *  
 
-FROM log\_in\_attempts  
+FROM log_in_attempts  
 
 WHERE NOT country LIKE ‘MEX%’;
 ```
 
   
 
-Esta consulta extrae los registros de la tabla log\_in\_attempts correspondientes a inicios de sesión realizados fuera de México, aplicando la condición NOT country LIKE 'MEX%' para excluir variantes de dicho país.
+Esta consulta extrae los registros de la tabla log_in_attempts correspondientes a inicios de sesión realizados fuera de México, aplicando la condición NOT country LIKE 'MEX%' para excluir variantes de dicho país.
 
   
 
@@ -73,16 +73,16 @@ Esta consulta extrae los registros de la tabla log\_in\_attempts correspondiente
   
 ```
 
-SELECT \*  
+SELECT *  
 
 FROM employees  
 
-WHERE department \= ‘Marketing’ AND office LIKE ‘East%’;
+WHERE department = ‘Marketing’ AND office LIKE ‘East%’;
 ```
 
   
 
-Esta consulta recupera la información de los empleados de la tabla employees pertenecientes al departamento de Marketing y asignados a oficinas de la región Este (department \= 'Marketing' AND office LIKE 'East%').
+Esta consulta recupera la información de los empleados de la tabla employees pertenecientes al departamento de Marketing y asignados a oficinas de la región Este (department = 'Marketing' AND office LIKE 'East%').
 
   
 
@@ -91,16 +91,16 @@ Esta consulta recupera la información de los empleados de la tabla employees pe
   
 
 ```
-SELECT \*  
+SELECT *  
 
 FROM employees  
 
-WHERE department \= ‘Finance’ OR department \= ‘Sales’;
+WHERE department = ‘Finance’ OR department = ‘Sales’;
 
 ```
   
 
-Esta consulta consulta la tabla employees para seleccionar a los empleados que pertenecen a los departamentos de Finanzas o Ventas (department \= 'Finance' OR department \= 'Sales').
+Esta consulta consulta la tabla employees para seleccionar a los empleados que pertenecen a los departamentos de Finanzas o Ventas (department = 'Finance' OR department = 'Sales').
 
   
 
@@ -109,16 +109,16 @@ Esta consulta consulta la tabla employees para seleccionar a los empleados que p
   
 
 ```
-SELECT \*  
+SELECT *  
 
 FROM employees  
 
-WHERE NOT department \= ‘Information technology’;
+WHERE NOT department = ‘Information technology’;
 ```
 
   
 
-Esta consulta extrae de la tabla employees a todos los empleados excluyendo a aquellos que forman parte del departamento de Tecnología de la Información (NOT department \= 'Information technology').
+Esta consulta extrae de la tabla employees a todos los empleados excluyendo a aquellos que forman parte del departamento de Tecnología de la Información (NOT department = 'Information technology').
 
   
 
