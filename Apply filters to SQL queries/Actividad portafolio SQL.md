@@ -1,134 +1,74 @@
 # Aplicar filtros a consultas SQL
 
-  
-
 ## Descripción del proyecto
-
-  
 
 Usted es un profesional de seguridad en una gran organización. Parte de su trabajo es investigar problemas de seguridad para ayudar a mantener el sistema seguro. Recientemente descubrió algunos problemas potenciales de seguridad que involucran intentos de inicio de sesión y máquinas de empleados.
 
-  
-
-Su tarea es examinar los datos de la organización en sus tablas **employees** y **log\_in\_attempts**. Deberá utilizar filtros SQL para recuperar registros de diferentes conjuntos de datos e investigar los posibles problemas de seguridad.
-
-  
+Su tarea es examinar los datos de la organización en sus tablas **employees** y **log_in_attempts**. Deberá utilizar filtros SQL para recuperar registros de diferentes conjuntos de datos e investigar los posibles problemas de seguridad.
 
 ## Recuperar intentos de inicio de sesión fallidos fuera del horario laboral
 
-  
-
+```sql
+SELECT * 
+FROM log_in_attempts 
+WHERE login_time > '18:00' AND success = 0;
 ```
-SELECT \*  
 
-FROM log\_in\_attempts  
-
-WHERE login\_time \> ‘18:00’ AND success \= 0;
-
-```
-  
-
-Esta consulta recupera los registros de la tabla log\_in\_attempts correspondientes a intentos de inicio de sesión fallidos (success \= 0) realizados después del horario laboral (login\_time \> '18:00').
-
-  
+Esta consulta recupera los registros de la tabla `log_in_attempts` correspondientes a intentos de inicio de sesión fallidos (`success = 0`) realizados después del horario laboral (`login_time > '18:00'`).
 
 ## Recuperar intentos de inicio de sesión en fechas específicas
 
-  
-
-```
-SELECT \*  
-
-FROM log\_in\_attempts  
-
-WHERE login\_date \= ‘2022-05-09’ OR login\_date \= ‘2022-05-08’;
+```sql
+SELECT * 
+FROM log_in_attempts 
+WHERE login_date = '2022-05-09' OR login_date = '2022-05-08';
 ```
 
-  
-
-Esta consulta filtra la tabla log\_in\_attempts para obtener todos los intentos de inicio de sesión registrados en las fechas específicas del 8 y 9 de mayo de 2022 (login\_date \= '2022-05-09' OR login\_date \= '2022-05-08').
-
-  
+Esta consulta filtra la tabla `log_in_attempts` para obtener todos los intentos de inicio de sesión registrados en las fechas específicas del 8 y 9 de mayo de 2022 (`login_date = '2022-05-09' OR login_date = '2022-05-08'`).
 
 ## Recuperar intentos de inicio de sesión fuera de México
 
-  
-
-```
-SELECT \*  
-
-FROM log\_in\_attempts  
-
-WHERE NOT country LIKE ‘MEX%’;
+```sql
+SELECT * 
+FROM log_in_attempts 
+WHERE NOT country LIKE 'MEX%';
 ```
 
-  
-
-Esta consulta extrae los registros de la tabla log\_in\_attempts correspondientes a inicios de sesión realizados fuera de México, aplicando la condición NOT country LIKE 'MEX%' para excluir variantes de dicho país.
-
-  
+Esta consulta extrae los registros de la tabla `log_in_attempts` correspondientes a inicios de sesión realizados fuera de México, aplicando la condición `NOT country LIKE 'MEX%'` para excluir variantes de dicho país.
 
 ## Recuperar empleados de Marketing
 
-  
+```sql
+SELECT * 
+FROM employees 
+WHERE department = 'Marketing' AND office LIKE 'East%';
 ```
 
-SELECT \*  
-
-FROM employees  
-
-WHERE department \= ‘Marketing’ AND office LIKE ‘East%’;
-```
-
-  
-
-Esta consulta recupera la información de los empleados de la tabla employees pertenecientes al departamento de Marketing y asignados a oficinas de la región Este (department \= 'Marketing' AND office LIKE 'East%').
-
-  
+Esta consulta recupera la información de los empleados de la tabla `employees` pertenecientes al departamento de Marketing y asignados a oficinas de la región Este (`department = 'Marketing' AND office LIKE 'East%'`).
 
 ## Recuperar empleados de Finanzas o Ventas
 
-  
-
+```sql
+SELECT * 
+FROM employees 
+WHERE department = 'Finance' OR department = 'Sales';
 ```
-SELECT \*  
 
-FROM employees  
-
-WHERE department \= ‘Finance’ OR department \= ‘Sales’;
-
-```
-  
-
-Esta consulta consulta la tabla employees para seleccionar a los empleados que pertenecen a los departamentos de Finanzas o Ventas (department \= 'Finance' OR department \= 'Sales').
-
-  
+Esta consulta consulta la tabla `employees` para seleccionar a los empleados que pertenecen a los departamentos de Finanzas o Ventas (`department = 'Finance' OR department = 'Sales'`).
 
 ## Recuperar todos los empleados que no pertenecen a TI
 
-  
-
-```
-SELECT \*  
-
-FROM employees  
-
-WHERE NOT department \= ‘Information technology’;
+```sql
+SELECT * 
+FROM employees 
+WHERE NOT department = 'Information technology';
 ```
 
-  
-
-Esta consulta extrae de la tabla employees a todos los empleados excluyendo a aquellos que forman parte del departamento de Tecnología de la Información (NOT department \= 'Information technology').
-
-  
+Esta consulta extrae de la tabla `employees` a todos los empleados excluyendo a aquellos que forman parte del departamento de Tecnología de la Información (`NOT department = 'Information technology'`).
 
 ## Resumen
 
-  
-
-En esta actividad se aplicaron conceptos clave de filtrado AND, NOT y OR en consultas de base de datos. Aplicados a la necesidad de buscar información con respecto a inicios de sesión sospechosos fuera del horario laboral, en determinados lugares así como también datos de empleados de determinados departamentos.
-
-
+En esta actividad se aplicaron conceptos clave de filtrado `AND`, `NOT` y `OR` en consultas de base de datos. Aplicados a la necesidad de buscar información con respecto a inicios de sesión sospechosos fuera del horario laboral, en determinados lugares así como también datos de empleados de determinados departamentos.
 
 ---
 
